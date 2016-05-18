@@ -3,17 +3,14 @@
 <head>
   <meta charset="utf-8"/>
   <title>Practice</title>
-  <style>
-    body {
-      font: normal 85%/1.4 helvetica, arial, sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script rel="javascript" type="text/javascript" src="main.js"></script>
 </head>
 <body>
 
 <div id="welcome">
   <h1>
-    Welcome to Code Shope!
+    Welcome to Code Shop!
   </h1>
   <p>
     This is where you can buy various coding languages.
@@ -32,8 +29,8 @@
     </div>
 
     <div class="order">
-      <label for="txt-q-extra">Quantity: </label>
-      <input type="text" id="txt-q-extra" size="3"
+      <label for="txt-q-html">Quantity: </label>
+      <input type="text" id="txt-q-html" size="3"
       placeholder="0">
     </div>
 
@@ -49,8 +46,8 @@
     </div>
 
     <div class="order">
-      <label for="txt-q-extra">Quantity: </label>
-      <input type="text" id="txt-q-extra" size="3"
+      <label for="txt-q-css">Quantity: </label>
+      <input type="text" id="txt-q-css" size="3"
       placeholder="0">
     </div>
 
@@ -66,8 +63,25 @@
     </div>
 
     <div class="order">
-      <label for="txt-q-extra">Quantity: </label>
-      <input type="text" id="txt-q-extra" size="3"
+      <label for="txt-q-js">Quantity: </label>
+      <input type="text" id="txt-q-js" size="3"
+      placeholder="0">
+    </div>
+
+  </div>
+
+  <div class="item">
+
+    <h2>SQL</h2>
+    <p>Find that data</p>
+
+    <div class="info">
+      <span>Price: $15/query</span>
+    </div>
+
+    <div class="order">
+      <label for="txt-q-sql">Quantity: </label>
+      <input type="text" id="txt-q-sql" size="3"
       placeholder="0">
     </div>
 
@@ -78,11 +92,12 @@
     <h2>Estimate Order</h2>
     <div class="group state">
       <label for="s-state">State:</label>
-      <select id="s-state">
+      <select id="s-state" required>
         <option value="">- select -</option>
+        <option value="AZ">Arizona</option>
         <option value="CA">California (7.5% tax)</option>
         <option value="CO">Colorado</option>
-        <option value="AZ">Arizona</option>
+        <option value="WA">Washington (6.5% tax)</option>
       </select>
     </div>
 
@@ -125,7 +140,7 @@
         <input type="submit" value="Estimate Total" id="btn-estimate">
         <input type="text" id="txt-estimate" placeholder="$0.00">
 
-        <div id="results"></div> 
+        <div id="results"></div>
       </p>
     </div>
 
@@ -135,6 +150,60 @@
 
 <script>
 'use strict';
+document.getElementById('cart-code').addEventListener('submit', estimateTotal);
+
+function estimateTotal(event) {
+  event.preventDefault();
+
+  var html             = parseInt(document.getElementById('txt-q-html').value) || 0,
+      css              = parseInt(document.getElementById('txt-q-css').value) || 0,
+      js               = parseInt(document.getElementById('txt-q-js').value) || 0,
+      sql              = parseInt(document.getElementById('txt-q-sql').value) || 0,
+      state            = document.getElementById('s-state').value;
+
+  var methods = document.getElementById('cart-code').r_method,
+      shippingMethod;
+
+  for (var i = 0; i < methods.length; i++) {
+    if (methods[i].checked == true) {
+      shippingMethod = methods[i].value;
+    }
+  }
+
+  var taxFactor = 1;
+  if (state === 'CA') {
+    taxFactor = 1.075;
+  } else if (state === 'WA') {
+    taxFactor = 1.065;
+  }
+
+  var shippingCostPer = 0;
+  switch (shippingMethod) {
+    case 'pickup' :
+      shippingCostPer = 0;
+      break;
+    case 'usps' :
+      shippingCostPer = 4;
+      break;
+    case 'ups' :
+      shippingCostPer = 6;
+      break;
+  }
+
+  var templates = html + css + js + sql,
+      shippingCost = templates * shippingCostPer;
+
+  var subTotal = ((html * 10) + (css * 20) + (js * 30) + (sql * 15)) * taxFactor;
+
+  var estimate = "$" + (subTotal + shippingCost).toFixed(2);
+
+  document.getElementById('txt-estimate').value = estimate;
+
+  document.getElementById('results').innerHTML = 'Total template: ' + templates + '<br>';
+  document.getElementById('results').innerHTML += 'Total shipping charge: $' + shippingCost.toFixed(2) + '<br>';
+  document.getElementById('results').innerHTML += 'Total tax: ' + ((taxFactor - 1) * 100).toFixed(2) + '%';
+
+}
 </script>
 </body>
 </html>
