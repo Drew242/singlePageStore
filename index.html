@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Practice</title>
+  <style>
+    body {
+      font: normal 85%/1.4 helvetica, arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<div id="welcome">
+  <h1>
+    Welcome to Code Shope!
+  </h1>
+  <p>
+    This is where you can buy various coding languages.
+  </p>
+</div>
+
+<form class="cart" id="cart-code">
+
+  <div class="item">
+
+    <h2>HTML</h2>
+    <p>The very basics to build that page</p>
+
+    <div class="info">
+      <span>Price: $10/template</span>
+    </div>
+
+    <div class="order">
+      <label for="txt-q-extra">Quantity: </label>
+      <input type="text" id="txt-q-extra" size="3"
+      placeholder="0">
+    </div>
+
+  </div>
+
+  <div class="item">
+
+    <h2>CSS</h2>
+    <p>Make that HTML look a bit prettier</p>
+
+    <div class="info">
+      <span>Price: $20/add-on</span>
+    </div>
+
+    <div class="order">
+      <label for="txt-q-extra">Quantity: </label>
+      <input type="text" id="txt-q-extra" size="3"
+      placeholder="0">
+    </div>
+
+  </div>
+
+  <div class="item">
+
+    <h2>JavaScript</h2>
+    <p>Now <em>animate</em> that fancy page</p>
+
+    <div class="info">
+      <span>Price: $30/animation</span>
+    </div>
+
+    <div class="order">
+      <label for="txt-q-extra">Quantity: </label>
+      <input type="text" id="txt-q-extra" size="3"
+      placeholder="0">
+    </div>
+
+  </div>
+
+  <div id="summary">
+
+    <h2>Estimate Order</h2>
+    <div class="group state">
+      <label for="s-state">State:</label>
+      <select id="s-state">
+        <option value="">- select -</option>
+        <option value="CA">California (7.5% tax)</option>
+        <option value="CO">Colorado</option>
+        <option value="AZ">Arizona</option>
+      </select>
+    </div>
+
+    <div class="group method">
+      <br>
+      <label for="r-method-pickup">Shipping Method:</label><br>
+      <input type="radio" value="pickup"
+             name="r_method" id="r-method-pickup" checked>
+             <label for="r-method-pickup">Pickup (free)</label><br>
+
+      <input type="radio" value="usps"
+             name="r_method" id="r-method-usps">
+             <label for="r-method-usps">US Mail ($4)</label><br>
+
+      <input type="radio" value="ups"
+             name="r_method" id="r-method-ups">
+             <label for="r-method-ups">UPS ($6)</label><br>
+    </div>
+
+    <div class="group special">
+      <br>
+      <label for="c-special-gift">Special:</label><br>
+      <input type="checkbox" value="YES"
+             id="c-special-gift">
+      <label for="c-special-gift">This is a gift</label><br>
+
+      <input type="checkbox" value="YES"
+             id="c-special-card">
+      <label for="c-special-card">I would like a card</label><br>
+
+      <input type="checkbox" value="YES"
+             id="c-special-syntax">
+      <label for="c-special-syntax">Use syntax highlighting</label><br>
+
+    </div>
+
+    <div class="group calc">
+      <p>
+        <label for="btn-estimate">Click to estimate:</label>
+        <input type="submit" value="Estimate Total" id="btn-estimate">
+        <input type="text" id="txt-estimate" placeholder="$0.00">
+
+        <div id="results"></div> 
+      </p>
+    </div>
+
+  </div>
+
+</form>
+
+<script>
+'use strict';
+</script>
+</body>
+</html>
