@@ -75,22 +75,12 @@ function() {
   }
 
   function deactivateTabs() {
-    document.getElementById('about-header').className = 'tab';
-    document.getElementById('beginnings-header').className = 'tab';
-    document.getElementById('why-header').className = 'tab';
-    document.getElementById('clients-header').className = 'tab';
-    document.getElementById('about-body').className = 'content';
-    document.getElementById('beginnings-body').className = 'content';
-    document.getElementById('why-body').className = 'content';
-    document.getElementById('clients-body').className = 'content';
-    // var tabs = document.getElementsByClassName('tab');
-    // for (var i = 0; 0 < tabs.length; i++) {
-    //   tabs[i].className = 'tab';
-    // }
-    // var bodies = document.getElementsByClassName('content');
-    // for (var i = 0; 0 < bodies.length; i++) {
-    //   bodies[i].className = 'content';
-    // }
+    var tabs = document.getElementsByClassName('tab'),
+        bodies = document.getElementsByClassName('content');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].className = 'tab';
+      bodies[i].className = 'content';
+    }
   }
 
 });
