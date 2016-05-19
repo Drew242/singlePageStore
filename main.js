@@ -53,3 +53,8 @@ function estimateTotal(event) {
   document.getElementById('results').innerHTML += 'Total tax: ' + ((taxFactor - 1) * 100).toFixed(2) + '%';
 
 }
+
+document.addEventListener('DOMContentLoaded',
+function() {
+  document.getElementById('tab-group').className = 'ready';
+});
