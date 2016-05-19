@@ -58,7 +58,7 @@
 }
 
 .ready .content.active {
-  display: block; 
+  display: block;
 }
 
 .ready .content:after {
