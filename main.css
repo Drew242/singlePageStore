@@ -1,3 +1,7 @@
+/*
+  Order section
+*/
+
 .container1 {
   width: 40%;
   height: 100%;
@@ -6,6 +10,10 @@
   font: normal 85%/1.4 helvetica, arial, sans-serif;
   background-color: rgba(0, 250, 0, 0.5);
 }
+
+/*
+  Tab Section
+*/
 
 .container2 {
   width: 55%;
@@ -79,4 +87,34 @@
 
 .ready #clients-header {
   left: 27.3em;
+}
+
+/*
+  Google Maps API Section
+*/
+
+.container3 {
+  width: 55%;
+  height: 100%;
+  margin-top: 1em;
+  padding: 1em;
+  float: right;
+  text-align: center;
+  font: normal 85%/1.4 helvetica, arial, sans-serif;
+  background-color: rgba(250, 0, 0, 0.5);
+}
+
+#address {
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-color: black;
+  padding: 1em;
+  width: 25%;
+}
+
+#my-map {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
 }

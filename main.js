@@ -5,13 +5,13 @@ function estimateTotal(event) {
   event.preventDefault();
 
   var html             = parseInt(document.getElementById('txt-q-html').value) || 0,
-      css              = parseInt(document.getElementById('txt-q-css').value) || 0,
-      js               = parseInt(document.getElementById('txt-q-js').value) || 0,
-      sql              = parseInt(document.getElementById('txt-q-sql').value) || 0,
-      state            = document.getElementById('s-state').value;
+  css              = parseInt(document.getElementById('txt-q-css').value) || 0,
+  js               = parseInt(document.getElementById('txt-q-js').value) || 0,
+  sql              = parseInt(document.getElementById('txt-q-sql').value) || 0,
+  state            = document.getElementById('s-state').value;
 
   var methods = document.getElementById('cart-code').r_method,
-      shippingMethod;
+  shippingMethod;
 
   for (var i = 0; i < methods.length; i++) {
     if (methods[i].checked == true) {
@@ -29,18 +29,18 @@ function estimateTotal(event) {
   var shippingCostPer = 0;
   switch (shippingMethod) {
     case 'pickup' :
-      shippingCostPer = 0;
-      break;
+    shippingCostPer = 0;
+    break;
     case 'usps' :
-      shippingCostPer = 4;
-      break;
+    shippingCostPer = 4;
+    break;
     case 'ups' :
-      shippingCostPer = 6;
-      break;
+    shippingCostPer = 6;
+    break;
   }
 
   var templates = html + css + js + sql,
-      shippingCost = templates * shippingCostPer;
+  shippingCost = templates * shippingCostPer;
 
   var subTotal = ((html * 10) + (css * 20) + (js * 30) + (sql * 15)) * taxFactor;
 
@@ -54,6 +54,11 @@ function estimateTotal(event) {
 
 }
 
+/*
+container2 - Tab Section
+*/
+
+'use strict';
 document.addEventListener('DOMContentLoaded',
 function() {
   document.getElementById('tab-group').className = 'ready';
@@ -66,9 +71,9 @@ function() {
 
   function activateTab(event) {
     var myID = this.id,
-        bodyID = myID.replace('header', 'body');
+    bodyID = myID.replace('header', 'body');
 
-        deactivateTabs();
+    deactivateTabs();
 
     document.getElementById(myID).className = 'tab active';
     document.getElementById(bodyID).className = 'content active';
@@ -76,7 +81,7 @@ function() {
 
   function deactivateTabs() {
     var tabs = document.getElementsByClassName('tab'),
-        bodies = document.getElementsByClassName('content');
+    bodies = document.getElementsByClassName('content');
     for (var i = 0; i < tabs.length; i++) {
       tabs[i].className = 'tab';
       bodies[i].className = 'content';
@@ -84,3 +89,25 @@ function() {
   }
 
 });
+
+/*
+Google API Section
+*/
+
+'use strict';
+
+var map;
+var myLatLng = {lat: 38.9477794, lng: -104.8089864};
+function initMap() {
+  map = new google.maps.Map(document.getElementById('my-map'), {
+    center: myLatLng,
+    zoom: 14,
+    draggable: false
+  });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    animation:google.maps.Animation.DROP,
+    title: 'Come visit the Code Shop'
+  });
+}
