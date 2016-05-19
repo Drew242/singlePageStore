@@ -6,147 +6,199 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-
-<div id="welcome">
-  <h1>
-    Welcome to Code Shop!
-  </h1>
-  <p>
-    This is where you can buy various coding languages.
-  </p>
-</div>
-
-<form class="cart" id="cart-code">
-
-  <div class="item">
-
-    <h2>HTML</h2>
-    <p>The very basics to build that page</p>
-
-    <div class="info">
-      <span>Price: $10/template</span>
-    </div>
-
-    <div class="order">
-      <label for="txt-q-html">Quantity: </label>
-      <input type="text" id="txt-q-html" size="3"
-      placeholder="0">
-    </div>
-
-  </div>
-
-  <div class="item">
-
-    <h2>CSS</h2>
-    <p>Make that HTML look a bit prettier</p>
-
-    <div class="info">
-      <span>Price: $20/add-on</span>
-    </div>
-
-    <div class="order">
-      <label for="txt-q-css">Quantity: </label>
-      <input type="text" id="txt-q-css" size="3"
-      placeholder="0">
-    </div>
-
-  </div>
-
-  <div class="item">
-
-    <h2>JavaScript</h2>
-    <p>Now <em>animate</em> that fancy page</p>
-
-    <div class="info">
-      <span>Price: $30/animation</span>
-    </div>
-
-    <div class="order">
-      <label for="txt-q-js">Quantity: </label>
-      <input type="text" id="txt-q-js" size="3"
-      placeholder="0">
-    </div>
-
-  </div>
-
-  <div class="item">
-
-    <h2>SQL</h2>
-    <p>Find that data</p>
-
-    <div class="info">
-      <span>Price: $15/query</span>
-    </div>
-
-    <div class="order">
-      <label for="txt-q-sql">Quantity: </label>
-      <input type="text" id="txt-q-sql" size="3"
-      placeholder="0">
-    </div>
-
-  </div>
-
-  <div id="summary">
-
-    <h2>Estimate Order</h2>
-    <div class="group state">
-      <label for="s-state">State:</label>
-      <select id="s-state" required>
-        <option value="">- select -</option>
-        <option value="AZ">Arizona</option>
-        <option value="CA">California (7.5% tax)</option>
-        <option value="CO">Colorado</option>
-        <option value="WA">Washington (6.5% tax)</option>
-      </select>
-    </div>
-
-    <div class="group method">
-      <br>
-      <label for="r-method-pickup">Shipping Method:</label><br>
-      <input type="radio" value="pickup"
-             name="r_method" id="r-method-pickup" checked>
-             <label for="r-method-pickup">Pickup (free)</label><br>
-
-      <input type="radio" value="usps"
-             name="r_method" id="r-method-usps">
-             <label for="r-method-usps">US Mail ($4)</label><br>
-
-      <input type="radio" value="ups"
-             name="r_method" id="r-method-ups">
-             <label for="r-method-ups">UPS ($6)</label><br>
-    </div>
-
-    <div class="group special">
-      <br>
-      <label for="c-special-gift">Special:</label><br>
-      <input type="checkbox" value="YES"
-             id="c-special-gift">
-      <label for="c-special-gift">This is a gift</label><br>
-
-      <input type="checkbox" value="YES"
-             id="c-special-card">
-      <label for="c-special-card">I would like a card</label><br>
-
-      <input type="checkbox" value="YES"
-             id="c-special-syntax">
-      <label for="c-special-syntax">Use syntax highlighting</label><br>
-
-    </div>
-
-    <div class="group calc">
+  <div class="container1">
+    <div id="welcome">
+      <h1>
+        Welcome to Code Shop!
+      </h1>
       <p>
-        <label for="btn-estimate">Click to estimate:</label>
-        <input type="submit" value="Estimate Total" id="btn-estimate">
-        <input type="text" id="txt-estimate" placeholder="$0.00">
-
-        <div id="results"></div>
+        This is where you can buy various coding languages.
       </p>
     </div>
 
+    <form class="cart" id="cart-code">
+
+      <div class="item">
+
+        <h2>HTML</h2>
+        <p>The very basics to build that page</p>
+
+        <div class="info">
+          <span>Price: $10/template</span>
+        </div>
+
+        <div class="order">
+          <label for="txt-q-html">Quantity: </label>
+          <input type="text" id="txt-q-html" size="3"
+          placeholder="0">
+        </div>
+
+      </div>
+
+      <div class="item">
+
+        <h2>CSS</h2>
+        <p>Make that HTML look a bit prettier</p>
+
+        <div class="info">
+          <span>Price: $20/add-on</span>
+        </div>
+
+        <div class="order">
+          <label for="txt-q-css">Quantity: </label>
+          <input type="text" id="txt-q-css" size="3"
+          placeholder="0">
+        </div>
+
+      </div>
+
+      <div class="item">
+
+        <h2>JavaScript</h2>
+        <p>Now <em>animate</em> that fancy page</p>
+
+        <div class="info">
+          <span>Price: $30/animation</span>
+        </div>
+
+        <div class="order">
+          <label for="txt-q-js">Quantity: </label>
+          <input type="text" id="txt-q-js" size="3"
+          placeholder="0">
+        </div>
+
+      </div>
+
+      <div class="item">
+
+        <h2>SQL</h2>
+        <p>Find that data</p>
+
+        <div class="info">
+          <span>Price: $15/query</span>
+        </div>
+
+        <div class="order">
+          <label for="txt-q-sql">Quantity: </label>
+          <input type="text" id="txt-q-sql" size="3"
+          placeholder="0">
+        </div>
+
+      </div>
+
+      <div id="summary">
+
+        <h2>Estimate Order</h2>
+        <div class="group state">
+          <label for="s-state">State:</label>
+          <select id="s-state" required>
+            <option value="">- select -</option>
+            <option value="AZ">Arizona</option>
+            <option value="CA">California (7.5% tax)</option>
+            <option value="CO">Colorado</option>
+            <option value="WA">Washington (6.5% tax)</option>
+          </select>
+        </div>
+
+        <div class="group method">
+          <br>
+          <label for="r-method-pickup">Shipping Method:</label><br>
+          <input type="radio" value="pickup"
+          name="r_method" id="r-method-pickup" checked>
+          <label for="r-method-pickup">Pickup (free)</label><br>
+
+          <input type="radio" value="usps"
+          name="r_method" id="r-method-usps">
+          <label for="r-method-usps">US Mail ($4)</label><br>
+
+          <input type="radio" value="ups"
+          name="r_method" id="r-method-ups">
+          <label for="r-method-ups">UPS ($6)</label><br>
+        </div>
+
+        <div class="group special">
+          <br>
+          <label for="c-special-gift">Special:</label><br>
+          <input type="checkbox" value="YES"
+          id="c-special-gift">
+          <label for="c-special-gift">This is a gift</label><br>
+
+          <input type="checkbox" value="YES"
+          id="c-special-card">
+          <label for="c-special-card">I would like a card</label><br>
+
+          <input type="checkbox" value="YES"
+          id="c-special-syntax">
+          <label for="c-special-syntax">Use syntax highlighting</label><br>
+
+        </div>
+
+        <div class="group calc">
+          <p>
+            <label for="btn-estimate">Click to estimate:</label>
+            <input type="submit" value="Estimate Total" id="btn-estimate">
+            <input type="text" id="txt-estimate" placeholder="$0.00">
+
+            <div id="results"></div>
+          </p>
+        </div>
+
+      </div>
+
+    </form>
+
   </div>
 
-</form>
+  <div class="container2">
+    <div id="tab-group" class="ready">
+      <h1 id="about-header">About Code Shop</h1>
+      <p id="about-body">
+        Lorem ipsum dolor sit amet, at molestie reformidans vim, ius stet gloriatur temporibus ex.
+        Alii vide viris at pro, sed putent voluptua intellegat ex, nec ne rebum prodesset.
+        Volumus tacimates his ex, feugiat definiebas eu vis. Te amet nostro mei, sanctus complectitur qui ei.
+        Eu eam minimum assentior temporibus, mei idque delectus reformidans eu.
+        Persecuti conclusionemque vel ut, an vix fugit possit, eam munere indoctum ea.
 
-<script rel="javascript" type="text/javascript" src="main.js"></script>
+        Ad facete discere eum. Ad vivendo accommodare eam, eu omittam voluptatum reprimique vis, ea autem intellegam vix.
+        Pri et omnium laboramus. Cum habeo utinam everti ut, cum eu quem solet. Ea altera persius est.
+      </p><br>
+
+      <h1 id="beginnings-header">Our Beginnings</h1>
+      <p id="beginnings-body">
+        Et vis aeque accusata theophrastus, mei at feugiat verterem mediocritatem, dicit intellegam mel te.
+        Est ea diam probatus, sea commodo euripidis assueverit no. Eu eum graece voluptua.
+        Ea sit quem postea sadipscing, prima dicat singulis sea eu.
+        Mei legimus molestie eleifend at, sit minim ignota id, diam unum necessitatibus vix ad.
+
+        Vis illud utinam no. An fugit ceteros has, qui facer theophrastus et, no sumo cibo scaevola per.
+        Ut ius fugit verear, vis eirmod elaboraret ex. Cu per falli cetero, ea quod dicta pericula vis.
+        Duo et consul imperdiet dissentias. Modo mollis qualisque at mea, agam voluptaria eu vel, ea nam melius detraxit.
+      </p><br>
+
+      <h1 id="why-header">Why Code Shop</h1>
+      <p id="why-body">
+        Est vero principes ad, laudem graeci nam ad. Mollis docendi cu mel, at sed unum latine virtute.
+        Te veri illum accusamus nec, qui posse debet erroribus in. Cibo timeam theophrastus in sit.
+
+        Senserit forensibus cu vim, dicunt alterum graecis sea in. Eligendi fabellas nec no.
+        Pri ex rationibus temporibus, debet cetero ut mea. Cu apeirian reprimique ius, cu purto eius labores cum.
+        Sit ad sale euismod ancillae. Eu natum nonumes fierent usu, eos at etiam eligendi, perpetua contentiones in pri.
+        Phaedrum gubergren consequat no sit.
+      </p><br>
+
+      <h1 id="clients-header">Our Clients</h1>
+      <p id="clients-body">
+        Cum at vero putent, in cum commodo nominati, eu eos exerci tamquam posidonium.
+        Docendi praesent quo in, cu eam solet postea. Vix et aliquam honestatis, usu ea oratio legere ponderum.
+        Tantas splendide honestatis sit ei, ut autem imperdiet sea.
+
+        Probo eirmod eloquentiam cu sea, mei eu sonet dolor. Eu nam harum urbanitas.
+        Postea quaerendum quo ut, at illum cetero ancillae vis, sea cu solum ullum harum.
+        Ne sed causae perfecto, omnis pericula aliquando ne eos.
+        Sed odio debet principes te, vel pertinax mnesarchum in.
+      </p>
+    </div>
+  </div>
+  <script rel="javascript" type="text/javascript" src="main.js"></script>
 </body>
 </html>
